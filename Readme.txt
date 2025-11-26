@@ -1,324 +1,268 @@
+```txt
 ====================================================================
               SANDZISO MAMBA - PORTFOLIO WEBSITE
 ====================================================================
 
 📁 PROJECT OVERVIEW
 -------------------
-A modern, responsive portfolio website showcasing my skills, projects, 
-and experience as a Computer Science student and Full-Stack Developer.
+A dynamic, evolving portfolio website showcasing my journey as a 
+third-year Computer Science student and aspiring Full-Stack Developer.
+This portfolio reflects my ongoing growth and learning process.
 
-🌐 LIVE DEMO: [Your Portfolio URL]
+🌐 LIVE DEMO: https://sandziso.wuaze.com
 📧 EMAIL: mlungisimamba01@gmail.com
 📱 PHONE: (+268) 7854 5189 | (+27) 78 143 0934
+📍 LOCATION: Eswatini
+🎓 STATUS: Third-Year BSc Computer Science Student
 
 ====================================================================
 
-🚀 FEATURES
------------
-✅ Fully Responsive Design
-✅ Advanced CSS Animations & Transitions
-✅ Smooth Scrolling Navigation
-✅ Interactive Portfolio Filtering
-✅ Dynamic Typing Effect (Hero Section)
-✅ Scroll-Triggered Animations
-✅ Working Contact Form with PHP
-✅ Mobile-First Design
-✅ SEO Optimized
-✅ Fast Loading Performance
+🚀 CURRENT STATUS & PROGRESS
+----------------------------
+🟢 COMPLETED & HOSTED (80%+):
+• Mamba Rentals Eswatini - Rental property platform
+• HomewareOnTap - E-commerce platform
+
+🟡 IN ACTIVE DEVELOPMENT:
+• CFCI Church Website - Church management system
+• Hardware Shop API - Java RESTful API
+• Timochi Takho - Local services marketplace
+• EDSA Website - Non-profit organization platform
+
+This portfolio is a living document of my coding journey - I'm 
+constantly learning, improving, and adding new features as I 
+progress through my Computer Science degree.
 
 ====================================================================
 
-🛠 TECHNICAL STACK
-------------------
+🛠 TECHNICAL STACK (CURRENT SKILLS)
+-----------------------------------
 Frontend:
 • HTML5, CSS3, JavaScript (ES6+)
-• CSS Grid & Flexbox
-• CSS Custom Properties (Variables)
-• AOS (Animate On Scroll) Library
-• Bootstrap Icons
+• CSS Grid & Flexbox Layouts
+• Bootstrap 5
+• Responsive Design Principles
 
 Backend:
-• PHP (Contact Form)
-• SMTP Email Configuration
+• PHP (Learning & Implementing)
+• MySQL Database Design
+• REST API Concepts
+• Java (Academic Projects)
+
+Tools & Concepts:
+• Git Version Control
+• Maven Build Tools
+• Tomcat Server Deployment
+• Problem-Solving Algorithms
 
 ====================================================================
 
-📁 PROJECT STRUCTURE
+📁 PROJECT STRUCTURE & STATUS
 --------------------
 portfolio-website/
 │
-├── 📄 index.html                 # Main website file
+├── 📄 index.html                 # Main portfolio website
 ├── 📄 contact.php                # PHP contact form handler
-├── 📄 README.txt                 # This file
+│
+├── 📁 projects/                  # Project detail pages
+│   ├── 🟢 homewareontap.html     # LIVE - E-commerce platform
+│   ├── 🟢 mambarentals.html      # LIVE - Rental property platform
+│   ├── 🟡 cfci-church.html       # IN DEVELOPMENT
+│   ├── 🟡 hardware-api.html      # IN DEVELOPMENT - Java REST API
+│   ├── 🟡 timochi-takho.html     # IN DEVELOPMENT
+│   └── 🟡 edsa-website.html      # IN DEVELOPMENT
 │
 └── 📁 assets/
-    ├── 📁 css/                   # Stylesheets (if any external)
-    ├── 📁 js/                    # JavaScript files (if any external)
     └── 📁 images/
-        ├── profile.jpg           # Your professional photo
+        ├── profile.jpg
         └── 📁 projects/          # Project screenshots
             ├── homewareontap.jpg
             ├── mambarentals.jpg
-            ├── cfci-church.jpg
-            ├── hardware-api.jpg
-            ├── timochi-takho.jpg
-            └── edsa-website.jpg
+            └── (others in progress)
 
 ====================================================================
 
-⚙️ INSTALLATION & SETUP
------------------------
-
-1. LOCAL DEVELOPMENT SETUP
-   -----------------------
-   a. Download all files to your local machine
-   b. Place all files in your web server directory (htdocs, www, etc.)
-   c. Ensure your local server supports PHP (XAMPP, WAMP, MAMP, etc.)
-   d. Open your browser and navigate to: http://localhost/portfolio
-
-2. WEB HOSTING DEPLOYMENT
-   ----------------------
-   a. Upload all files to your web hosting server via FTP/cPanel
-   b. Ensure the hosting supports PHP
-   c. Update email configuration in contact.php if needed
-   d. Test the contact form functionality
-
-3. GITHUB PAGES (Static Version)
-   ------------------------------
-   a. Remove PHP contact form or replace with formspree/service
-   b. Upload to GitHub repository
-   c. Enable GitHub Pages in repository settings
-
-====================================================================
-
-📧 CONTACT FORM SETUP
----------------------
-
-The contact form uses PHP mail() function. For better deliverability:
-
-OPTION 1: BASIC PHP MAIL (Current Setup)
------------------------------------------
-• Works with most hosting providers
-• Edit recipient email in contact.php (line ~15):
-  $recipient = "mlungisimamba01@gmail.com";
-
-OPTION 2: SMTP CONFIGURATION (Recommended)
-------------------------------------------
-Use PHPMailer for better email delivery:
-
-1. Download PHPMailer: https://github.com/PHPMailer/PHPMailer
-2. Replace contact.php with SMTP version
-3. Configure your email provider settings
-
-Example SMTP Configuration (Gmail):
-• Host: smtp.gmail.com
-• Port: 587
-• Username: your-email@gmail.com
-• Password: your-app-password
-
-OPTION 3: FORM SUBMISSION SERVICE
----------------------------------
-Use services like:
-• Formspree.io
-• Getform.io
-• Netlify Forms
-
-====================================================================
-
-🎨 CUSTOMIZATION GUIDE
-----------------------
-
-1. PERSONAL INFORMATION
-   --------------------
-   Update the following sections in index.html:
-
-   • Hero Section: Name, title, description
-   • About Section: Personal info, bio
-   • Contact Section: Contact details
-   • Social Links: LinkedIn, GitHub, etc.
-
-2. PROJECTS & PORTFOLIO
-   --------------------
-   Add your projects in the Portfolio section:
-
-   • Update project images in assets/images/projects/
-   • Modify project titles, descriptions, and links
-   • Add/remove project categories as needed
-
-3. SKILLS SECTION
-   --------------
-   Update skills and proficiency levels:
-
-   • Modify skill names and percentages
-   • Add/remove skill categories
-   • Update skill icons if needed
-
-4. COLOR SCHEME
-   ------------
-   Change the color scheme by modifying CSS variables in :root:
-
-   :root {
-     --primary: #2563eb;        /* Main brand color */
-     --primary-dark: #1d4ed8;   /* Darker shade */
-     --secondary: #475569;      /* Secondary text */
-     --light: #f8fafc;          /* Background light */
-     --dark: #0f172a;           /* Background dark */
-   }
-
-5. ANIMATIONS
-   ----------
-   Customize animations:
-
-   • AOS (Animate On Scroll) settings in JavaScript
-   • CSS transitions and transforms
-   • Typing effect speed and texts
-
-====================================================================
-
-📱 RESPONSIVE BREAKPOINTS
---------------------------
-• Mobile: < 768px
-• Tablet: 768px - 992px
-• Desktop: > 992px
-
-====================================================================
-
-🌐 BROWSER COMPATIBILITY
-------------------------
-✅ Chrome 60+
-✅ Firefox 55+
-✅ Safari 12+
-✅ Edge 79+
-✅ Mobile browsers
-
-====================================================================
-
-📝 CONTENT UPDATE CHECKLIST
----------------------------
-
-BEFORE GOING LIVE:
-[ ] Update personal information
-[ ] Add professional profile photo
-[ ] Add actual project screenshots
-[ ] Verify all links work correctly
-[ ] Test contact form functionality
-[ ] Update social media links
-[ ] Check mobile responsiveness
-[ ] Test loading speed
-[ ] Verify SEO meta tags
-[ ] Add Google Analytics (optional)
-
-====================================================================
-
-🚀 PERFORMANCE OPTIMIZATION
----------------------------
-
-1. IMAGE OPTIMIZATION
-   • Compress all images (use TinyPNG, Squoosh)
-   • Use WebP format for better compression
-   • Implement lazy loading for images
-
-2. CODE OPTIMIZATION
-   • Minify CSS and JavaScript
-   • Use CSS sprites for icons
-   • Implement caching strategies
-
-3. HOSTING OPTIMIZATION
-   • Use CDN for assets
-   • Enable Gzip compression
-   • Use HTTPS for security
-
-====================================================================
-
-🔧 TROUBLESHOOTING
+🎓 ACADEMIC CONTEXT
 -------------------
+As a third-year BSc Computer Science student at Eduvos, I'm:
+• Currently learning advanced programming concepts
+• Working on academic projects in Java, C#, and databases
+• Building real-world projects to apply theoretical knowledge
+• Continuously improving my full-stack development skills
 
-COMMON ISSUES:
-
-1. CONTACT FORM NOT WORKING
-   • Check PHP support on server
-   • Verify email configuration
-   • Check server error logs
-   • Test with different email service
-
-2. ANIMATIONS NOT WORKING
-   • Check AOS library is loaded
-   • Verify JavaScript console for errors
-   • Ensure proper internet connection for CDN
-
-3. RESPONSIVE ISSUES
-   • Check viewport meta tag
-   • Test on different devices
-   • Verify CSS media queries
-
-4. IMAGES NOT LOADING
-   • Check file paths and names
-   • Verify image file permissions
-   • Ensure correct file extensions
+This portfolio represents my practical application of academic 
+learning and personal passion for web development.
 
 ====================================================================
 
-📞 SUPPORT
-----------
+🚀 LIVE PROJECTS (CURRENTLY HOSTED)
+-----------------------------------
 
-For technical support or questions:
+1. MAMBA RENTALS ESWATINI (80% Complete)
+   • Full-stack rental property platform
+   • PHP, MySQL, JavaScript, Bootstrap
+   • Features: Property listings, booking system, user authentication
+   • Live at: https://mambarentals.wuaze.com
+
+2. HOMEWAREONTAP E-COMMERCE (80% Complete)
+   • Complete online store with admin dashboard
+   • PHP, MySQL, payment integration
+   • Features: Product management, customer portal, order processing
+   • Live at: https://homewareontap.wuaze.com
+
+====================================================================
+
+🔧 PROJECTS IN DEVELOPMENT
+--------------------------
+
+These projects are actively being worked on and represent my 
+current learning focus:
+
+3. CFCI CHURCH WEBSITE
+   • Church management system with multi-role access
+   • Learning: Advanced user permissions, event management
+   • Status: Design phase, database planning
+
+4. HARDWARE SHOP API
+   • Java RESTful API for inventory management
+   • Learning: JAX-RS, Maven, advanced Java concepts
+   • Status: Academic project integration
+
+5. TIMOCHI TAKHO
+   • Local services marketplace for Eswatini
+   • Learning: Mobile money integration, geolocation services
+   • Status: Planning and market research
+
+6. EDSA WEBSITE
+   • Non-profit organization platform
+   • Learning: Accessibility features, donation systems
+   • Status: Initial design and content planning
+
+====================================================================
+
+📈 SKILL DEVELOPMENT ROADMAP
+----------------------------
+
+CURRENT FOCUS (2025):
+• Advanced PHP and MySQL optimization
+• Java enterprise development
+• REST API design and implementation
+• Database architecture and normalization
+• Mobile-responsive design patterns
+
+PLANNED LEARNING:
+• React.js and modern frontend frameworks
+• Node.js and Express.js
+• MongoDB and NoSQL databases
+• Cloud deployment (AWS/Azure)
+• DevOps and CI/CD pipelines
+
+====================================================================
+
+🎯 LEARNING PHILOSOPHY
+----------------------
+This portfolio embodies my approach to learning:
+
+1. BUILD AND ITERATE
+   Start with working prototypes and improve continuously
+
+2. LEARN BY DOING
+   Apply academic concepts to real-world projects
+
+3. EMBRACE THE JOURNEY
+   Each project represents a step in my development journey
+
+4. SHARE PROGRESS
+   Documenting my learning helps solidify understanding
+
+====================================================================
+
+⚙️ TECHNICAL IMPLEMENTATION NOTES
+---------------------------------
+
+CURRENT CAPABILITIES:
+• Responsive web design with CSS Grid/Flexbox
+• PHP backend development with MySQL
+• Basic JavaScript interactivity
+• Bootstrap UI components
+• Form handling and validation
+• Database design and relationships
+
+AREAS FOR IMPROVEMENT:
+• Advanced JavaScript frameworks
+• API security best practices
+• Performance optimization
+• Testing methodologies
+• Deployment automation
+
+====================================================================
+
+📞 CONNECT & FOLLOW MY JOURNEY
+-------------------------------
+
+I welcome:
+• Feedback on my current projects
+• Suggestions for improvement
+• Collaboration opportunities
+• Mentorship and guidance
+
+Contact:
 • Email: mlungisimamba01@gmail.com
 • LinkedIn: linkedin.com/in/mlungisimamba
 • GitHub: github.com/Sandziso
+• Instagram: @sandzi_2113
 
 ====================================================================
 
-📄 LICENSE
-----------
-This project is open source and available under the MIT License.
+🌟 SPECIAL NOTE TO VISITORS
+---------------------------
 
-You are free to:
-• Use, copy, modify, merge, publish, distribute
-• Use for personal or commercial projects
-• Sublicense, and/or sell copies
+Thank you for visiting my portfolio! Please keep in mind:
 
-Attribution is appreciated but not required.
+• I am a student developer actively learning and improving
+• Some projects are works in progress
+• I welcome constructive feedback
+• This portfolio will evolve as I learn new technologies
+• Each project represents a learning milestone
 
-====================================================================
-
-🔄 UPDATE LOG
--------------
-v1.0.0 - Initial Release (2025)
-• Complete portfolio website
-• Responsive design
-• Contact form functionality
-• Advanced animations
+I believe in transparently sharing my coding journey - the successes,
+the challenges, and everything in between. This portfolio is a 
+snapshot of my current abilities, but I'm committed to continuous
+growth and improvement.
 
 ====================================================================
 
-💡 FUTURE ENHANCEMENTS
+🔄 COMING SOON UPDATES
 ----------------------
-• Blog integration
-• Dark/Light mode toggle
-• Multi-language support
-• Project case studies
-• Testimonials section
-• Downloadable resume
-• Newsletter subscription
-• Admin panel for content management
+• Regular project progress updates
+• New features for existing projects
+• Additional projects as I learn new technologies
+• Improved UI/UX based on user feedback
+• Blog section to share my learning journey
 
 ====================================================================
 
-🎯 KEY FOCUS AREAS
--------------------
-As a Computer Science student, this portfolio emphasizes:
-• Full-Stack Web Development
-• Modern JavaScript Frameworks
-• Database Design & Optimization
-• REST API Development
-• Responsive UI/UX Design
-• Problem-Solving Skills
+🎓 ACADEMIC INTEGRATION
+-----------------------
+This portfolio complements my formal education by:
+• Providing practical application of theoretical concepts
+• Building a professional development track record
+• Creating opportunities for real-world problem solving
+• Developing professional communication skills
+• Establishing a foundation for future career growth
 
 ====================================================================
 
-Thank you for using my portfolio template!
-Feel free to customize it to match your personal brand and style.
+Thank you for taking the time to review my work and follow along 
+with my development journey. I'm excited to continue growing as a 
+developer and contributing to meaningful projects.
 
 Best regards,
+
 Sandziso Mamba
-Computer Science Student & Full-Stack Developer
+Third-Year BSc Computer Science Student
+Aspiring Full-Stack Developer
+Eswatini
+
+"Every expert was once a beginner. Every masterpiece was once a work in progress."
+```

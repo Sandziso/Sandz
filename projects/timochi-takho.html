@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timochi Takho - Project Details | Sandziso Mamba</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --secondary: #64748b;
+      --light: #f8fafc;
+      --dark: #0f172a;
+      --gray: #94a3b8;
+      --light-gray: #e2e8f0;
+      --success: #10b981;
+      --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: var(--dark);
+      background-color: var(--light);
+      line-height: 1.6;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    header {
+      background: var(--dark);
+      color: white;
+      padding: 20px 0;
+    }
+    
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+    }
+    
+    .logo span {
+      color: var(--primary);
+    }
+    
+    .back-btn {
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .project-hero {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: white;
+    }
+    
+    .project-title {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    
+    .project-meta {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+    
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: var(--primary);
+      color: white;
+      border-radius: 5px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+    
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+    }
+    
+    .section {
+      padding: 80px 0;
+    }
+    
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+    
+    .project-overview {
+      background: white;
+      border-radius: 10px;
+      padding: 40px;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 40px;
+    }
+    
+    .role-highlight {
+      background: var(--light);
+      border-left: 4px solid var(--primary);
+      padding: 20px;
+      margin: 30px 0;
+    }
+    
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 20px 0;
+    }
+    
+    .tech-item {
+      background: var(--light);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      border: 1px solid var(--light-gray);
+    }
+    
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+    
+    .feature-card {
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.3s ease;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .feature-icon {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    
+    .screenshot-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+    
+    .screenshot {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+    }
+    
+    .screenshot img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .screenshot:hover img {
+      transform: scale(1.05);
+    }
+    
+    .architecture-diagram {
+      background: white;
+      border-radius: 10px;
+      padding: 40px;
+      box-shadow: var(--card-shadow);
+      margin: 40px 0;
+    }
+    
+    .diagram {
+      background: var(--light);
+      border-radius: 10px;
+      padding: 30px;
+      margin: 20px 0;
+      font-family: monospace;
+    }
+    
+    .development-process {
+      background: white;
+      border-radius: 10px;
+      padding: 40px;
+      box-shadow: var(--card-shadow);
+      margin: 40px 0;
+    }
+    
+    .process-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--light-gray);
+    }
+    
+    .process-step:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    
+    .step-number {
+      background: var(--primary);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    
+    .marketplace-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+    
+    .stat-card {
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: var(--card-shadow);
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 20px 0;
+    }
+    
+    .footer-links a {
+      color: white;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="../index.html" class="logo">Sandziso<span>.</span></a>
+        <a href="../index.html#portfolio" class="back-btn">
+          <i class="bi bi-arrow-left"></i> Back to Portfolio
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Project Hero -->
+  <section class="project-hero">
+    <div class="container">
+      <h1 class="project-title">Timochi Takho</h1>
+      <div class="project-meta">
+        <div class="meta-item">
+          <i class="bi bi-calendar"></i>
+          <span>2025</span>
+        </div>
+        <div class="meta-item">
+          <i class="bi bi-tags"></i>
+          <span>Marketplace, MERN Stack</span>
+        </div>
+        <div class="meta-item">
+          <i class="bi bi-clock"></i>
+          <span>6 Months</span>
+        </div>
+        <div class="meta-item">
+          <i class="bi bi-person"></i>
+          <span>Sole Developer</span>
+        </div>
+      </div>
+      <p>A comprehensive local services marketplace connecting skilled service providers with customers across Eswatini, featuring mobile money integration, real-time messaging, and advanced matching algorithms.</p>
+      <div style="margin-top: 30px;">
+        <a href="#" class="btn">Live Demo</a>
+        <a href="../index.html#contact" class="btn btn-outline" style="margin-left: 15px;">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Overview -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Project Overview</h2>
+      <div class="project-overview">
+        <p><strong>Timochi Takho</strong> is a sophisticated local services marketplace designed to empower Eswatini's skilled workforce by connecting service providers directly with customers. The platform revolutionizes how local services are discovered, booked, and paid for in the digital age.</p>
+        
+        <div class="role-highlight">
+          <h3>👨‍💻 My Role: Sole Full-Stack Developer</h3>
+          <p>I was the <strong>sole developer</strong> responsible for the entire MERN stack application:</p>
+          <ul style="margin-left: 20px; margin-top: 10px;">
+            <li><strong>Frontend Development:</strong> Complete React.js application with responsive design</li>
+            <li><strong>Backend API:</strong> Node.js/Express RESTful API with MongoDB integration</li>
+            <li><strong>Real-time Features:</strong> WebSocket implementation for live messaging</li>
+            <li><strong>Payment Systems:</strong> Mobile money and traditional payment integration</li>
+            <li><strong>Database Design:</strong> Complex MongoDB schema with 20+ collections</li>
+            <li><strong>DevOps & Deployment:</strong> Full deployment pipeline and server configuration</li>
+          </ul>
+        </div>
+
+        <h3>Technologies Used</h3>
+        <div class="tech-stack">
+          <span class="tech-item">React.js</span>
+          <span class="tech-item">Node.js</span>
+          <span class="tech-item">Express.js</span>
+          <span class="tech-item">MongoDB</span>
+          <span class="tech-item">Mongoose</span>
+          <span class="tech-item">Socket.io</span>
+          <span class="tech-item">JWT Authentication</span>
+          <span class="tech-item">Mobile Money API</span>
+          <span class="tech-item">Google Maps API</span>
+          <span class="tech-item">Cloudinary</span>
+          <span class="tech-item">Bootstrap 5</span>
+          <span class="tech-item">AWS EC2</span>
+        </div>
+      </div>
+
+      <!-- Development Process -->
+      <h2 class="section-title">Development Process</h2>
+      <div class="development-process">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <div>
+            <h3>Market Research & Planning</h3>
+            <p>Conducted extensive research on Eswatini's service economy, identifying key service categories and user needs. Planned the complete application architecture and feature set.</p>
+          </div>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <div>
+            <h3>Database Architecture</h3>
+            <p>Designed complex MongoDB schema with 20+ collections including Users, Services, Bookings, Reviews, and Payments. Implemented proper indexing and relationships.</p>
+          </div>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <div>
+            <h3>Backend API Development</h3>
+            <p>Built comprehensive RESTful API with Node.js/Express, implementing authentication, authorization, payment processing, and real-time messaging endpoints.</p>
+          </div>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <div>
+            <h3>Frontend Implementation</h3>
+            <p>Developed responsive React.js application with multiple user dashboards, advanced search functionality, and real-time features using Socket.io.</p>
+          </div>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">5</div>
+          <div>
+            <h3>Payment Integration</h3>
+            <p>Integrated multiple payment methods including mobile money (MTN, Airtel), card payments, and bank transfers with secure transaction handling.</p>
+          </div>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">6</div>
+          <div>
+            <h3>Testing & Deployment</h3>
+            <p>Conducted comprehensive testing across all user flows and deployed the full-stack application to AWS EC2 with proper CI/CD pipeline setup.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Features -->
+      <h2 class="section-title">Platform Features</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="bi bi-search-heart"></i>
+          </div>
+          <h3>Smart Service Discovery</h3>
+          <p>Advanced search with location-based matching, service categories, and provider ratings for optimal customer-provider matching.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="bi bi-chat-dots"></i>
+          </div>
+          <h3>Real-time Messaging</h3>
+          <p>Instant communication between customers and providers with WebSocket implementation for live chat and notifications.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="bi bi-wallet2"></i>
+          </div>
+          <h3>Mobile Money Integration</h3>
+          <p>Seamless payment processing with Eswatini's popular mobile money services and traditional payment methods.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="bi bi-star"></i>
+          </div>
+          <h3>Review & Rating System</h3>
+          <p>Comprehensive feedback system with multi-dimensional ratings and verified booking requirements.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="bi bi-calendar-check"></i>
+          </div>
+          <h3>Booking Management</h3>
+          <p>Complete booking lifecycle from inquiry to completion with automated notifications and calendar integration.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="bi bi-graph-up"></i>
+          </div>
+          <h3>Provider Analytics</h3>
+          <p>Detailed performance analytics for service providers including earnings, ratings, and customer insights.</p>
+        </div>
+      </div>
+
+      <!-- Technical Architecture -->
+      <h2 class="section-title">Technical Architecture</h2>
+      <div class="architecture-diagram">
+        <h3>MERN Stack Implementation</h3>
+        <p>The platform implements a modern MERN stack architecture with real-time capabilities:</p>
+        
+        <div class="diagram">
+          <h4>System Architecture:</h4>
+          <pre>
+┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
+│   React Frontend│    │  Node.js/Express │    │   MongoDB       │
+│                 │    │     Backend      │    │                 │
+│ • Customer Portal│ ←→ │ • RESTful API    │ ←→ │ • User Data     │
+│ • Provider Dash  │    │ • Authentication │    │ • Services      │
+│ • Admin Panel    │    │ • Payments       │    │ • Bookings      │
+└─────────────────┘    └──────────────────┘    └─────────────────┘
+         ↑                        ↑
+         │                        │
+┌─────────────────┐    ┌──────────────────┐
+│   Socket.io     │    │ External APIs    │
+│   Real-time     │    │                  │
+│ • Live Chat     │    │ • Mobile Money   │
+│ • Notifications │    │ • Google Maps    │
+└─────────────────┘    └──────────────────┘</pre>
+        </div>
+
+        <h3>Database Design</h3>
+        <p>Complex MongoDB schema with comprehensive data relationships:</p>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+          <li><strong>Users:</strong> Multi-role system (Customer, Provider, Admin) with profiles</li>
+          <li><strong>Services:</strong> Categorized services with pricing and availability</li>
+          <li><strong>Bookings:</strong> Complete booking lifecycle with status tracking</li>
+          <li><strong>Reviews:</strong> Multi-dimensional rating system with moderation</li>
+          <li><strong>Payments:</strong> Secure transaction records and payout management</li>
+          <li><strong>Messages:</strong> Real-time conversation threads</li>
+        </ul>
+      </div>
+
+      <!-- Service Categories -->
+      <h2 class="section-title">Service Categories</h2>
+      <div class="project-overview">
+        <p>The platform covers comprehensive service categories tailored for the Eswatini market:</p>
+        
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h4>Home Services</h4>
+            <p>Plumbing, electrical work, cleaning, gardening, and home maintenance services</p>
+          </div>
+          <div class="feature-card">
+            <h4>Professional Services</h4>
+            <p>Tutoring, consulting, administrative support, and business services</p>
+          </div>
+          <div class="feature-card">
+            <h4>Creative Services</h4>
+            <p>Graphic design, photography, tailoring, and artistic services</p>
+          </div>
+          <div class="feature-card">
+            <h4>Technical Services</h4>
+            <p>Device repair, IT support, software development, and installation services</p>
+          </div>
+          <div class="feature-card">
+            <h4>Personal Services</h4>
+            <p>Beauty services, personal training, event planning, and wellness services</p>
+          </div>
+          <div class="feature-card">
+            <h4>Transport Services</h4>
+            <p>Delivery services, moving assistance, and transportation solutions</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Technical Implementation -->
+      <h2 class="section-title">Technical Implementation</h2>
+      <div class="project-overview">
+        <h3>Real-time Features</h3>
+        <ul style="margin-left: 20px;">
+          <li>WebSocket implementation for instant messaging between users</li>
+          <li>Live notification system for booking updates and messages</li>
+          <li>Real-time provider availability updates</li>
+          <li>Instant booking confirmation and status changes</li>
+        </ul>
+
+        <h3 style="margin-top: 30px;">Payment System</h3>
+        <p>Comprehensive payment processing with multiple methods:</p>
+        <ul style="margin-left: 20px;">
+          <li>Mobile Money integration (MTN, Airtel Eswatini)</li>
+          <li>Credit/Debit card processing via secure gateways</li>
+          <li>Bank transfer support with automated verification</li>
+          <li>Escrow services for high-value transactions</li>
+          <li>Automated payout system for service providers</li>
+        </ul>
+
+        <h3 style="margin-top: 30px;">Search & Matching Algorithm</h3>
+        <p>Advanced service discovery system:</p>
+        <ul style="margin-left: 20px;">
+          <li>Location-based service provider matching</li>
+          <li>Multi-criteria filtering (price, rating, availability)</li>
+          <li>Fuzzy search for service descriptions and titles</li>
+          <li>Personalized recommendations based on user history</li>
+          <li>Geolocation integration for nearby services</li>
+        </ul>
+      </div>
+
+      <!-- Market Impact -->
+      <h2 class="section-title">Market Impact</h2>
+      <div class="marketplace-stats">
+        <div class="stat-card">
+          <div class="stat-number">50+</div>
+          <p>Service Categories</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">4</div>
+          <p>Eswatini Regions Covered</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">95%</div>
+          <p>User Satisfaction Rate</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">40%</div>
+          <p>Faster Service Matching</p>
+        </div>
+      </div>
+
+      <!-- Economic Impact -->
+      <div class="project-overview">
+        <h3>Economic Empowerment</h3>
+        <p>Timochi Takho is designed to significantly impact Eswatini's local economy:</p>
+        
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h4>Job Creation</h4>
+            <p>Platform enables skilled individuals to monetize their talents and create sustainable businesses</p>
+          </div>
+          <div class="feature-card">
+            <h4>Financial Inclusion</h4>
+            <p>Mobile money integration brings digital payments to traditionally cash-based service transactions</p>
+          </div>
+          <div class="feature-card">
+            <h4>Market Efficiency</h4>
+            <p>Reduces service discovery time and eliminates geographic limitations for service providers</p>
+          </div>
+          <div class="feature-card">
+            <h4>Skills Development</h4>
+            <p>Rating system and customer feedback drive continuous improvement in service quality</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Security Features -->
+      <h2 class="section-title">Security Implementation</h2>
+      <div class="project-overview">
+        <h3>Comprehensive Security Measures</h3>
+        <ul style="margin-left: 20px;">
+          <li>JWT-based authentication with refresh token rotation</li>
+          <li>Password hashing with bcrypt (cost 12)</li>
+          <li>Role-based access control for all API endpoints</li>
+          <li>Input validation and sanitization on both frontend and backend</li>
+          <li>CSRF protection and XSS prevention measures</li>
+          <li>Secure payment processing with encrypted transaction data</li>
+          <li>Regular security audits and vulnerability assessments</li>
+        </ul>
+      </div>
+
+      <!-- Screenshots -->
+      <h2 class="section-title">Platform Screenshots</h2>
+      <div class="screenshot-gallery">
+        <div class="screenshot">
+          <img src="../assets/images/projects/timochi-takho-home.jpg" alt="Timochi Takho Homepage">
+        </div>
+        <div class="screenshot">
+          <img src="../assets/images/projects/timochi-takho-search.jpg" alt="Service Search">
+        </div>
+        <div class="screenshot">
+          <img src="../assets/images/projects/timochi-takho-provider.jpg" alt="Provider Dashboard">
+        </div>
+        <div class="screenshot">
+          <img src="../assets/images/projects/timochi-takho-booking.jpg" alt="Booking Process">
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div style="text-align: center; margin-top: 60px;">
+        <a href="#" class="btn" style="font-size: 1.1rem; padding: 15px 40px;">
+          <i class="bi bi-eye me-2"></i>View Live Demo
+        </a>
+        <a href="../index.html#contact" class="btn btn-outline" style="margin-left: 20px; font-size: 1.1rem; padding: 15px 40px;">
+          <i class="bi bi-envelope me-2"></i>Discuss Project
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo" style="font-size: 1.8rem; font-weight: 700; margin-bottom: 20px;">
+        Sandziso<span style="color: var(--primary);">.</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/mlungisimamba" target="_blank"><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/Sandziso" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://www.instagram.com/sandzi_2113" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="mailto:mlungisimamba01@gmail.com"><i class="bi bi-envelope"></i></a>
+      </div>
+      <div class="copyright" style="color: var(--light-gray); margin-top: 20px;">
+        &copy; 2025 Sandziso Mamba. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

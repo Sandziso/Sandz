@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HomewareOnTap - Project Details | Sandziso Mamba</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --secondary: #64748b;
+      --light: #f8fafc;
+      --dark: #0f172a;
+      --gray: #94a3b8;
+      --light-gray: #e2e8f0;
+      --success: #10b981;
+      --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: var(--dark);
+      background-color: var(--light);
+      line-height: 1.6;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    header {
+      background: var(--dark);
+      color: white;
+      padding: 20px 0;
+    }
+    
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+    }
+    
+    .logo span {
+      color: var(--primary);
+    }
+    
+    .back-btn {
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .project-hero {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: white;
+    }
+    
+    .project-title {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    
+    .project-meta {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+    
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: var(--primary);
+      color: white;
+      border-radius: 5px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+    
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+    }
+    
+    .section {
+      padding: 80px 0;
+    }
+    
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+    
+    .project-overview {
+      background: white;
+      border-radius: 10px;
+      padding: 40px;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 40px;
+    }
+    
+    .role-highlight {
+      background: var(--light);
+      border-left: 4px solid var(--primary);
+      padding: 20px;
+      margin: 30px 0;
+    }
+    
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 20px 0;
+    }
+    
+    .tech-item {
+      background: var(--light);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      border: 1px solid var(--light-gray);
+    }
+    
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+    
+    .feature-card {
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.3s ease;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .feature-icon {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    
+    .screenshot-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+    
+    .screenshot {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+    }
+    
+    .screenshot img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .screenshot:hover img {
+      transform: scale(1.05);
+    }
+    
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 20px 0;
+    }
+    
+    .footer-links a {
+      color: white;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="../index.html" class="logo">Sandziso<span>.</span></a>
+        <a href="../index.html#portfolio" class="back-btn">
+          <i class="bi bi-arrow-left"></i> Back to Portfolio
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Project Hero -->
+  <section class="project-hero">
+    <div class="container">
+      <h1 class="project-title">HomewareOnTap E-commerce Platform</h1>
+      <div class="project-meta">
+        <div class="meta-item">
+          <i class="bi bi-calendar"></i>
+          <span>2025</span>
+        </div>
+        <div class="meta-item">
+          <i class="bi bi-tags"></i>
+          <span>E-commerce, Full-Stack</span>
+        </div>
+        <div class="meta-item">
+          <i class="bi bi-clock"></i>
+          <span>3 Months</span>
+        </div>
+      </div>
+      <p>A comprehensive e-commerce platform transforming a social media-based homeware business into a fully functional online store with advanced features including secure payments, inventory management, and automated email systems.</p>
+      <div style="margin-top: 30px;">
+        <a href="https://homewareontap.wuaze.com" target="_blank" class="btn">Live Demo</a>
+        <a href="../index.html#contact" class="btn btn-outline" style="margin-left: 15px;">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Overview -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Project Overview</h2>
+      <div class="project-overview">
+        <p><strong>HomewareOnTap</strong> is a complete e-commerce solution built from scratch to transform a social media-based homeware business into a professional online retail operation. The platform features a comprehensive admin dashboard, customer portal, secure payment integration, and automated inventory management.</p>
+        
+        <div class="role-highlight">
+          <h3>🚀 My Role: Project Manager & Full-Stack Developer</h3>
+          <p>I served as both <strong>Project Manager</strong> and <strong>Lead Developer</strong> for this project, responsible for:</p>
+          <ul style="margin-left: 20px; margin-top: 10px;">
+            <li>Project planning, requirements gathering, and timeline management</li>
+            <li>System architecture design and database schema development</li>
+            <li>Full-stack development (frontend, backend, database)</li>
+            <li>Payment gateway integration and security implementation</li>
+            <li>Deployment, hosting setup, and ongoing maintenance</li>
+          </ul>
+        </div>
+
+        <h3>Technologies Used</h3>
+        <div class="tech-stack">
+          <span class="tech-item">PHP</span>
+          <span class="tech-item">MySQL</span>
+          <span class="tech-item">HTML5</span>
+          <span class="tech-item">CSS3</span>
+          <span class="tech-item">JavaScript</span>
+          <span class="tech-item">Bootstrap 5.3</span>
+          <span class="tech-item">PayFast Payment Gateway</span>
+          <span class="tech-item">SendGrid Email API</span>
+          <span class="tech-item">Hostinger Business Cloud</span>
+        </div>
+      </div>
+
+      <!-- Key Features -->
+      <h2 class="section-title">Key Features</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="bi bi-cart-check"></i>
+          </div>
+          <h3>Complete E-commerce</h3>
+          <p>Full shopping cart, checkout process, and order management system with real-time inventory tracking.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="bi bi-shield-check"></i>
+          </div>
+          <h3>Enterprise Security</h3>
+          <p>Secure payment processing, CSRF protection, XSS prevention, and encrypted data storage.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="bi bi-phone"></i>
+          </div>
+          <h3>Mobile-First Design</h3>
+          <p>Fully responsive design optimized for all devices with touch-friendly interface.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="bi bi-graph-up"></i>
+          </div>
+          <h3>Admin Dashboard</h3>
+          <p>Comprehensive admin panel for product management, order processing, and analytics.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="bi bi-envelope-check"></i>
+          </div>
+          <h3>Automated Systems</h3>
+          <p>Email notifications, newsletter campaigns, and inventory alerts with cron job automation.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="bi bi-search"></i>
+          </div>
+          <h3>SEO Optimized</h3>
+          <p>Search engine friendly structure with meta tags, sitemaps, and performance optimization.</p>
+        </div>
+      </div>
+
+      <!-- Technical Implementation -->
+      <h2 class="section-title">Technical Implementation</h2>
+      <div class="project-overview">
+        <h3>Database Architecture</h3>
+        <p>Designed and implemented a comprehensive MySQL database with 15+ tables including:</p>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+          <li><strong>Users:</strong> Multi-role authentication system (customer, admin, manager)</li>
+          <li><strong>Products:</strong> Complete inventory management with stock alerts</li>
+          <li><strong>Orders:</strong> Full order lifecycle tracking and payment processing</li>
+          <li><strong>Reviews:</strong> Customer rating and review system with moderation</li>
+        </ul>
+
+        <h3 style="margin-top: 30px;">Security Features</h3>
+        <ul style="margin-left: 20px;">
+          <li>Password hashing with bcrypt (cost 12)</li>
+          <li>CSRF token protection for all forms</li>
+          <li>SQL injection prevention with prepared statements</li>
+          <li>XSS protection through input sanitization</li>
+          <li>Secure session management with regeneration</li>
+        </ul>
+
+        <h3 style="margin-top: 30px;">Payment Integration</h3>
+        <p>Integrated PayFast payment gateway with:</p>
+        <ul style="margin-left: 20px;">
+          <li>Secure transaction processing</li>
+          <li>Instant payment notifications (ITN)</li>
+          <li>Order status automation</li>
+          <li>Email receipt generation</li>
+        </ul>
+      </div>
+
+      <!-- Project Impact -->
+      <h2 class="section-title">Project Impact</h2>
+      <div class="project-overview">
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h3>Business Transformation</h3>
+            <p>Converted social media business to professional e-commerce platform with 24/7 availability</p>
+          </div>
+          <div class="feature-card">
+            <h3>Increased Efficiency</h3>
+            <p>Automated inventory management and order processing reduced manual work by 80%</p>
+          </div>
+          <div class="feature-card">
+            <h3>Enhanced Security</h3>
+            <p>Enterprise-grade security measures protecting customer data and financial transactions</p>
+          </div>
+          <div class="feature-card">
+            <h3>Scalable Foundation</h3>
+            <p>Architecture designed for business growth with capacity for 10,000+ products</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screenshots -->
+      <h2 class="section-title">Platform Screenshots</h2>
+      <div class="screenshot-gallery">
+        <div class="screenshot">
+          <img src="../assets/images/projects/homewareontap-home.jpg" alt="HomewareOnTap Homepage">
+        </div>
+        <div class="screenshot">
+          <img src="../assets/images/projects/homewareontap-products.jpg" alt="Product Catalog">
+        </div>
+        <div class="screenshot">
+          <img src="../assets/images/projects/homewareontap-admin.jpg" alt="Admin Dashboard">
+        </div>
+        <div class="screenshot">
+          <img src="../assets/images/projects/homewareontap-checkout.jpg" alt="Checkout Process">
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div style="text-align: center; margin-top: 60px;">
+        <a href="https://homewareontap.wuaze.com" target="_blank" class="btn" style="font-size: 1.1rem; padding: 15px 40px;">
+          <i class="bi bi-eye me-2"></i>View Live Demo
+        </a>
+        <a href="../index.html#contact" class="btn btn-outline" style="margin-left: 20px; font-size: 1.1rem; padding: 15px 40px;">
+          <i class="bi bi-envelope me-2"></i>Discuss Project
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo" style="font-size: 1.8rem; font-weight: 700; margin-bottom: 20px;">
+        Sandziso<span style="color: var(--primary);">.</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/mlungisimamba" target="_blank"><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/Sandziso" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://www.instagram.com/sandzi_2113" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="mailto:mlungisimamba01@gmail.com"><i class="bi bi-envelope"></i></a>
+      </div>
+      <div class="copyright" style="color: var(--light-gray); margin-top: 20px;">
+        &copy; 2025 Sandziso Mamba. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

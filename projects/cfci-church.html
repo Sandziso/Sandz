@@ -1,0 +1,763 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CFCI Church Website - Project Details | Sandziso Mamba</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #8B4513;
+      --primary-dark: #654321;
+      --secondary: #64748b;
+      --light: #f8fafc;
+      --dark: #0f172a;
+      --gray: #94a3b8;
+      --light-gray: #e2e8f0;
+      --success: #10b981;
+      --accent: #D4AF37;
+      --accent-dark: #B8860B;
+      --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: var(--dark);
+      background-color: var(--light);
+      line-height: 1.6;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    header {
+      background: var(--dark);
+      color: white;
+      padding: 20px 0;
+    }
+    
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+    }
+    
+    .logo span {
+      color: var(--primary);
+    }
+    
+    .back-btn {
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .project-hero {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #8B4513 0%, #654321 100%);
+      color: white;
+    }
+    
+    .project-title {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    
+    .project-meta {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+    
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: var(--primary);
+      color: white;
+      border-radius: 5px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+    
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+    }
+    
+    .btn-accent {
+      background: var(--accent);
+      color: var(--dark);
+    }
+    
+    .btn-accent:hover {
+      background: var(--accent-dark);
+      color: var(--dark);
+    }
+    
+    .section {
+      padding: 80px 0;
+    }
+    
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+    
+    .project-overview {
+      background: white;
+      border-radius: 10px;
+      padding: 40px;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 40px;
+    }
+    
+    .role-highlight {
+      background: var(--light);
+      border-left: 4px solid var(--primary);
+      padding: 20px;
+      margin: 30px 0;
+    }
+    
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 20px 0;
+    }
+    
+    .tech-item {
+      background: var(--light);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      border: 1px solid var(--light-gray);
+    }
+    
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+    
+    .feature-card {
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.3s ease;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .feature-icon {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    
+    .screenshot-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+    
+    .screenshot {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+    }
+    
+    .screenshot img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .screenshot:hover img {
+      transform: scale(1.05);
+    }
+    
+    .architecture-diagram {
+      background: white;
+      border-radius: 10px;
+      padding: 40px;
+      box-shadow: var(--card-shadow);
+      margin: 40px 0;
+    }
+    
+    .diagram {
+      background: var(--light);
+      border-radius: 10px;
+      padding: 30px;
+      margin: 20px 0;
+      font-family: monospace;
+    }
+    
+    .development-process {
+      background: white;
+      border-radius: 10px;
+      padding: 40px;
+      box-shadow: var(--card-shadow);
+      margin: 40px 0;
+    }
+    
+    .process-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--light-gray);
+    }
+    
+    .process-step:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    
+    .step-number {
+      background: var(--primary);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    
+    .user-role-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+    
+    .role-card {
+      background: var(--light);
+      border-radius: 10px;
+      padding: 25px;
+      text-align: center;
+      border-left: 4px solid var(--accent);
+    }
+    
+    .role-icon {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+    
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 20px 0;
+    }
+    
+    .footer-links a {
+      color: white;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="../index.html" class="logo">Sandziso<span>.</span></a>
+        <a href="../index.html#portfolio" class="back-btn">
+          <i class="bi bi-arrow-left"></i> Back to Portfolio
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Project Hero -->
+  <section class="project-hero">
+    <div class="container">
+      <h1 class="project-title">CFCI Church Website</h1>
+      <div class="project-meta">
+        <div class="meta-item">
+          <i class="bi bi-calendar"></i>
+          <span>2025</span>
+        </div>
+        <div class="meta-item">
+          <i class="bi bi-tags"></i>
+          <span>Church Management, Full-Stack</span>
+        </div>
+        <div class="meta-item">
+          <i class="bi bi-clock"></i>
+          <span>4 Months</span>
+        </div>
+        <div class="meta-item">
+          <i class="bi bi-person"></i>
+          <span>Sole Developer</span>
+        </div>
+      </div>
+      <p>A comprehensive church management system with member portal, event management, donation system, and multi-role access control for Christ Fellowship Church International.</p>
+      <div style="margin-top: 30px;">
+        <a href="https://cfci.wuaze.com" target="_blank" class="btn">Live Demo</a>
+        <a href="../index.html#contact" class="btn btn-accent" style="margin-left: 15px;">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Overview -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Project Overview</h2>
+      <div class="project-overview">
+        <p><strong>CFCI Church Website</strong> is a comprehensive church management system designed to serve Christ Fellowship Church International's digital needs. The platform provides multi-role access control, event management, donation processing, and member engagement tools in a unified system.</p>
+        
+        <div class="role-highlight">
+          <h3>👨‍💻 My Role: Sole Developer</h3>
+          <p>I was the <strong>sole developer</strong> responsible for the entire project lifecycle:</p>
+          <ul style="margin-left: 20px; margin-top: 10px;">
+            <li><strong>Full-Stack Development:</strong> Complete frontend and backend implementation</li>
+            <li><strong>Database Architecture:</strong> Designed and implemented 15+ interconnected tables</li>
+            <li><strong>UI/UX Design:</strong> Created intuitive interfaces for all user roles</li>
+            <li><strong>Payment Integration:</strong> Implemented secure donation processing</li>
+            <li><strong>Member Management:</strong> Built comprehensive member portal and directory</li>
+            <li><strong>Event System:</strong> Developed complete event management with registration</li>
+          </ul>
+        </div>
+
+        <h3>Technologies Used</h3>
+        <div class="tech-stack">
+          <span class="tech-item">PHP</span>
+          <span class="tech-item">MySQL</span>
+          <span class="tech-item">HTML5</span>
+          <span class="tech-item">CSS3</span>
+          <span class="tech-item">JavaScript</span>
+          <span class="tech-item">Bootstrap 5</span>
+          <span class="tech-item">PayFast Payment Gateway</span>
+          <span class="tech-item">AJAX</span>
+          <span class="tech-item">RESTful APIs</span>
+          <span class="tech-item">Hostinger Business Cloud</span>
+        </div>
+      </div>
+
+      <!-- Development Process -->
+      <h2 class="section-title">Development Process</h2>
+      <div class="development-process">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <div>
+            <h3>Requirements Analysis</h3>
+            <p>Conducted comprehensive analysis with church leadership to understand the needs of different user roles (Pastors, Members, Visitors) and identify key features for church management and member engagement.</p>
+          </div>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <div>
+            <h3>Multi-Role Architecture Design</h3>
+            <p>Designed comprehensive user role system with four distinct access levels (Public, Member, Pastor, Admin) and planned permission-based content access.</p>
+          </div>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <div>
+            <h3>Database Design</h3>
+            <p>Created normalized database schema with tables for members, events, donations, prayer requests, sermons, and user roles with proper relationships and constraints.</p>
+          </div>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <div>
+            <h3>Frontend Development</h3>
+            <p>Built responsive user interfaces using HTML5, CSS3, JavaScript, and Bootstrap 5. Created separate dashboards for each user role with intuitive navigation.</p>
+          </div>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">5</div>
+          <div>
+            <h3>Backend Implementation</h3>
+            <p>Developed robust PHP backend with secure authentication, role-based access control, event management, donation processing, and member communication systems.</p>
+          </div>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">6</div>
+          <div>
+            <h3>Integration & Testing</h3>
+            <p>Integrated payment gateways, implemented security measures, and conducted thorough testing across all user roles and church management workflows.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- User Roles -->
+      <h2 class="section-title">User Role System</h2>
+      <div class="project-overview">
+        <p>The platform implements a sophisticated four-tier user role system with customized access and functionality for each role:</p>
+        
+        <div class="user-role-grid">
+          <div class="role-card">
+            <div class="role-icon">
+              <i class="bi bi-globe"></i>
+            </div>
+            <h3>Public Visitors</h3>
+            <p>Access to public content, event information, sermon library, and contact forms without registration.</p>
+          </div>
+          
+          <div class="role-card">
+            <div class="role-icon">
+              <i class="bi bi-person"></i>
+            </div>
+            <h3>Church Members</h3>
+            <p>Member directory, event registration, prayer request submission, and personalized content access.</p>
+          </div>
+          
+          <div class="role-card">
+            <div class="role-icon">
+              <i class="bi bi-person-badge"></i>
+            </div>
+            <h3>Pastors & Leaders</h3>
+            <p>Member management, prayer request monitoring, event creation, and limited administrative functions.</p>
+          </div>
+          
+          <div class="role-card">
+            <div class="role-icon">
+              <i class="bi bi-gear"></i>
+            </div>
+            <h3>Administrators</h3>
+            <p>Full system access, user management, content moderation, financial reporting, and system configuration.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Features -->
+      <h2 class="section-title">Key Features</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="bi bi-people"></i>
+          </div>
+          <h3>Multi-Role Platform</h3>
+          <p>Four distinct user roles (Public, Member, Pastor, Admin) with customized dashboards and role-based permissions.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="bi bi-calendar-event"></i>
+          </div>
+          <h3>Event Management</h3>
+          <p>Complete event lifecycle from creation to registration with automated reminders and attendance tracking.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="bi bi-credit-card"></i>
+          </div>
+          <h3>Donation System</h3>
+          <p>Secure online donation processing with multiple payment methods and automated receipt generation.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="bi bi-chat-heart"></i>
+          </div>
+          <h3>Prayer Request Management</h3>
+          <p>Private prayer request submission with pastoral review and confidential response system.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="bi bi-mic"></i>
+          </div>
+          <h3>Sermon Library</h3>
+          <p>Comprehensive media library with sermon recordings, notes, and searchable archives by topic and speaker.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="bi bi-person-lines-fill"></i>
+          </div>
+          <h3>Member Directory</h3>
+          <p>Secure member directory with privacy controls, contact information, and family relationship tracking.</p>
+        </div>
+      </div>
+
+      <!-- Technical Implementation -->
+      <h2 class="section-title">Technical Implementation</h2>
+      <div class="project-overview">
+        <h3>Database Architecture</h3>
+        <p>Designed and implemented a comprehensive MySQL database with 15+ interconnected tables:</p>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+          <li><strong>Users:</strong> Multi-role authentication system with profile management</li>
+          <li><strong>Members:</strong> Complete member profiles with family relationships and contact details</li>
+          <li><strong>Events:</strong> Event management with registration, attendance, and reminders</li>
+          <li><strong>Donations:</strong> Secure transaction processing and financial records</li>
+          <li><strong>Prayer Requests:</strong> Confidential prayer management with status tracking</li>
+          <li><strong>Sermons:</strong> Media library with categories, speakers, and download tracking</li>
+        </ul>
+
+        <h3 style="margin-top: 30px;">Security Implementation</h3>
+        <ul style="margin-left: 20px;">
+          <li>Role-based access control with granular permissions</li>
+          <li>Password hashing with bcrypt algorithm (cost 12)</li>
+          <li>CSRF token protection for all forms and actions</li>
+          <li>SQL injection prevention using prepared statements</li>
+          <li>XSS protection through comprehensive input sanitization</li>
+          <li>Session management with automatic timeout and regeneration</li>
+        </ul>
+
+        <h3 style="margin-top: 30px;">Payment System</h3>
+        <p>Integrated multiple payment methods for donations and event registrations:</p>
+        <ul style="margin-left: 20px;">
+          <li>Credit/Debit card processing via PayFast gateway</li>
+          <li>Secure bank transfer integration</li>
+          <li>Recurring donation support with automated billing</li>
+          <li>Automated transaction logging and receipt generation</li>
+          <li>Donation reporting with tax-deductible tracking</li>
+        </ul>
+      </div>
+
+      <!-- System Architecture -->
+      <h2 class="section-title">System Architecture</h2>
+      <div class="architecture-diagram">
+        <h3>Multi-Role Architecture</h3>
+        <p>The platform implements a sophisticated four-tier architecture with role-based access control:</p>
+        
+        <div class="diagram">
+          <h4>User Roles & Permissions:</h4>
+          <pre>
+┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   ADMIN PANEL   │    │  PASTOR PORTAL   │    │ MEMBER DASHBOARD│    │ PUBLIC INTERFACE│
+│                 │    │                  │    │                 │    │                 │
+│ • User Management│   │ • Member Mgmt    │    │ • Event Reg.    │    │ • Event Info    │
+│ • System Config  │   │ • Prayer Mgmt    │    │ • Prayer Req.   │    │ • Sermons       │
+│ • Financial Reports│  │ • Event Creation │    │ • Directory     │    │ • Contact       │
+│ • Content Mod.   │   │ • Limited Admin  │    │ • Giving        │    │ • About         │
+└─────────────────┘    └──────────────────┘    └─────────────────┘    └─────────────────┘</pre>
+        </div>
+
+        <h3>Content Management Flow</h3>
+        <p>Streamlined workflow for content creation and publication across different user roles:</p>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+          <li><strong>Content Creation:</strong> Role-specific content creation capabilities</li>
+          <li><strong>Approval Process:</strong> Multi-level approval workflow for sensitive content</li>
+          <li><strong>Audience Targeting:</strong> Content visibility based on user roles and permissions</li>
+          <li><strong>Scheduling:</strong> Advanced scheduling for timed publications and events</li>
+        </ul>
+      </div>
+
+      <!-- Event Management System -->
+      <h2 class="section-title">Event Management System</h2>
+      <div class="project-overview">
+        <p>Comprehensive event management with registration, reminders, and attendance tracking:</p>
+        
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h3>Event Creation</h3>
+            <p>Intuitive event creation with categories, dates, locations, capacity limits, and registration settings.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Registration System</h3>
+            <p>Flexible registration with custom fields, payment integration, and waitlist management for popular events.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Automated Reminders</h3>
+            <p>Automatic email and SMS reminders for upcoming events with calendar integration options.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Attendance Tracking</h3>
+            <p>Digital check-in system with QR code support and attendance reporting for church leadership.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member Engagement Features -->
+      <h2 class="section-title">Member Engagement Features</h2>
+      <div class="project-overview">
+        <p>Tools designed to enhance member engagement and community building:</p>
+        
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h3>Prayer Wall</h3>
+            <p>Private prayer request system with pastoral oversight and confidential response mechanism.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Small Groups</h3>
+            <p>Small group management with member assignments, meeting schedules, and group communication tools.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Service Scheduling</h3>
+            <p>Volunteer scheduling system for church services and events with availability tracking.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Announcements</h3>
+            <p>Targeted announcement system with role-based visibility and priority settings.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Impact -->
+      <h2 class="section-title">Project Impact</h2>
+      <div class="project-overview">
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h3>Member Engagement</h3>
+            <p>Increased member participation by 65% through streamlined communication and event registration.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Administrative Efficiency</h3>
+            <p>Reduced administrative workload by 40% through automated processes and centralized management.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Financial Transparency</h3>
+            <p>Improved financial tracking and reporting with 95% accuracy in donation records and receipts.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Community Growth</h3>
+            <p>Facilitated 30% growth in church community through improved visitor engagement and member retention.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Code Samples -->
+      <h2 class="section-title">Technical Implementation</h2>
+      <div class="project-overview">
+        <h3>Key Code Features</h3>
+        
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h4>Role-Based Access Control</h4>
+            <p>Sophisticated permission system with middleware validation for different user roles and access levels.</p>
+          </div>
+          <div class="feature-card">
+            <h4>Event Registration System</h4>
+            <p>Complex event management with capacity tracking, waitlist functionality, and automated communications.</p>
+          </div>
+          <div class="feature-card">
+            <h4>Payment Integration</h4>
+            <p>Secure payment gateway integration with multiple donation types and automated receipt generation.</p>
+          </div>
+          <div class="feature-card">
+            <h4>Member Management</h4>
+            <p>Comprehensive member profiles with family relationships, service history, and communication preferences.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Screenshots -->
+      <h2 class="section-title">Platform Screenshots</h2>
+      <div class="screenshot-gallery">
+        <div class="screenshot">
+          <img src="../assets/images/projects/cfci-homepage.jpg" alt="CFCI Homepage">
+        </div>
+        <div class="screenshot">
+          <img src="../assets/images/projects/cfci-member-dashboard.jpg" alt="Member Dashboard">
+        </div>
+        <div class="screenshot">
+          <img src="../assets/images/projects/cfci-events.jpg" alt="Events Management">
+        </div>
+        <div class="screenshot">
+          <img src="../assets/images/projects/cfci-admin.jpg" alt="Admin Panel">
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div style="text-align: center; margin-top: 60px;">
+        <a href="https://cfci.wuaze.com" target="_blank" class="btn" style="font-size: 1.1rem; padding: 15px 40px;">
+          <i class="bi bi-eye me-2"></i>View Live Demo
+        </a>
+        <a href="../index.html#contact" class="btn btn-accent" style="margin-left: 20px; font-size: 1.1rem; padding: 15px 40px;">
+          <i class="bi bi-envelope me-2"></i>Discuss Project
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo" style="font-size: 1.8rem; font-weight: 700; margin-bottom: 20px;">
+        Sandziso<span style="color: var(--primary);">.</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/mlungisimamba" target="_blank"><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/Sandziso" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://www.instagram.com/sandzi_2113" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="mailto:mlungisimamba01@gmail.com"><i class="bi bi-envelope"></i></a>
+      </div>
+      <div class="copyright" style="color: var(--light-gray); margin-top: 20px;">
+        &copy; 2025 Sandziso Mamba. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
